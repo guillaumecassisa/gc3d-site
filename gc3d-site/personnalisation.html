@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personnalisation sur mesure — GC3D</title>
+<meta name="description" content="Projets sur mesure et personnalisation GC3D : décrivez votre idée, joignez vos fichiers, recevez un devis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 2L30 9.5V24.5L17 32L4 24.5V9.5L17 2Z" stroke="#D58A49" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M4 9.5L17 17M17 17L30 9.5M17 17V32" stroke="#D58A49" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <span><span class="logo-text">GC3D</span><span class="logo-sub">Fabrication numérique</span></span>
+    </a>
+    <nav class="links">
+      <a href="index.html#technologies">Technologies</a>
+<a href="boutique.html">Boutique</a>
+<a href="realisations.html">Réalisations</a>
+<a href="personnalisation.html" class="current">Sur mesure</a>
+<a href="xtool-squad.html">xTool Squad</a>
+<a href="coaching.html">Coaching</a>
+<a href="a-propos.html">À propos</a>
+<a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="boutique.html">Boutique</a>
+      <a class="btn btn-dark" href="contact.html">Concrétiser mon projet</a>
+      <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobileMenu">
+    <a href="index.html#technologies">Technologies</a>
+<a href="boutique.html">Boutique</a>
+<a href="realisations.html">Réalisations</a>
+<a href="personnalisation.html" class="current">Sur mesure</a>
+<a href="xtool-squad.html">xTool Squad</a>
+<a href="coaching.html">Coaching</a>
+<a href="a-propos.html">À propos</a>
+<a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Personnalisation sur mesure</div>
+    <h1>Votre idée, fabriquée sur mesure.</h1>
+    <p>Cadeau, objet de marque, prototype ou petite série : décrivez votre projet et joignez vos fichiers, GC3D s'occupe du reste.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap intro-grid">
+    <div>
+      <div class="eyebrow">Comment ça fonctionne</div>
+      <h2>Trois étapes simples.</h2>
+      <p>1. Vous décrivez votre projet via le formulaire ci-dessous, avec vos fichiers si vous en avez (plan, croquis, logo, modèle 3D).</p>
+      <p>2. L'atelier étudie la faisabilité technique et vous propose un devis avec délai et tarif.</p>
+      <p>3. Après validation, votre pièce est fabriquée à l'atelier de Mallemort puis expédiée.</p>
+    </div>
+    <div class="intro-figure"><img src="images/surmesure.jpg" alt="Objets personnalisés sur mesure" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="tag">Visuel provisoire — personnalisation sur mesure</span></div>
+  </div>
+</section>
+
+<section class="section-dark" id="devis">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Devis</div>
+      <h2>Décrivez votre projet.</h2>
+      <p>Répondez en quelques minutes, un fichier joint accélère toujours l'étude de faisabilité.</p>
+    </div>
+    <div class="form-grid">
+      <form class="devis-form js-ajax-form" data-endpoint="https://formsubmit.co/ajax/guillaumecassisa@gmail.com" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis — GC3D">
+        <div class="row-2">
+          <div class="field"><label for="p-nom">Nom complet</label><input id="p-nom" name="Nom" type="text" required></div>
+          <div class="field"><label for="p-email">E-mail</label><input id="p-email" name="Email" type="email" required></div>
+        </div>
+        <div class="field"><label for="p-type">Type de projet</label>
+          <select id="p-type" name="Type de projet" required>
+            <option value="">Sélectionner…</option>
+            <option>Impression 3D</option>
+            <option>Découpe laser</option>
+            <option>Gravure laser</option>
+            <option>Impression UV DTF</option>
+            <option>Projet combinant plusieurs techniques</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="field"><label for="p-desc">Description du projet</label><textarea id="p-desc" name="Description" rows="5" required placeholder="Dimensions souhaitées, matière, quantité, délai souhaité…"></textarea></div>
+        <div class="field"><label for="p-file">Fichier ou visuel <span class="opt">(optionnel — plan, croquis, logo, STL, SVG…)</span></label><input id="p-file" name="Fichier joint" type="file"></div>
+        <p class="form-error"></p>
+        <button type="submit" class="btn btn-copper">Envoyer ma demande de devis</button>
+        <p class="form-note">Les informations saisies servent uniquement à répondre à votre demande. Voir la <a href="confidentialite.html">politique de confidentialité</a> et les <a href="cgv.html">CGV</a>. Aucun engagement avant acceptation du devis.</p>
+      </form>
+      <div class="form-confirm">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <h3 style="margin:0;">Demande envoyée.</h3>
+  <p style="margin:0;color:var(--ink-soft);">Merci, votre demande de devis a bien été transmise à l'atelier. Vous recevrez une réponse à l'adresse indiquée.</p>
+</div>
+      <div class="contact-card">
+        <h3 style="margin-top:0;">Avant d'envoyer</h3>
+        <p style="color:var(--steel);">Pour une étude plus rapide, pensez à préciser :</p>
+        <dl>
+          <dt>Dimensions</dt><dd>Taille approximative de la pièce souhaitée</dd>
+          <dt>Matière</dt><dd>Bois, PLA, PETG, TPU…</dd>
+          <dt>Quantité</dt><dd>Pièce unique ou petite série</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">FAQ</div><h2>Questions fréquentes sur le sur mesure.</h2></div>
+    <div class="faq-list"><details class="faq-item"><summary>Quels délais pour une commande en boutique ?</summary><p>Les créations personnalisées de la boutique sont fabriquées à la demande : le délai dépend de la technologie (impression 3D, gravure laser ou UV DTF) et de la charge de l'atelier, il est indiqué sur la fiche Etsy.</p></details>
+<details class="faq-item"><summary>Comment obtenir un devis pour un projet sur mesure ?</summary><p>Décrivez votre projet via le formulaire de devis, en joignant si possible un fichier (plan, croquis, visuel ou modèle 3D). L'atelier revient vers vous avec une estimation de faisabilité, de délai et de tarif, sans engagement.</p></details>
+<details class="faq-item"><summary>Quels formats de fichiers sont acceptés pour l'impression 3D ou la découpe laser ?</summary><p>Pour l'impression 3D : STL, OBJ ou 3MF. Pour la découpe et la gravure laser : SVG, DXF ou AI, idéalement en vecteurs fermés. Si votre fichier n'est pas encore dans un de ces formats, l'atelier peut vous accompagner pour le préparer.</p></details>
+<details class="faq-item"><summary>En quoi consiste le coaching xTool ?</summary><p>Le coaching s'adresse aux particuliers et professionnels qui possèdent ou envisagent d'acquérir une machine xTool. Les séances couvrent la prise en main, les réglages matière, la maintenance et l'optimisation de vos projets de découpe et gravure.</p></details></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo-text" style="font-family:var(--font-display);font-weight:700;font-size:1.3rem;">GC3D</div>
+        <p>Produits personnalisés en impression 3D, découpe et gravure laser, impression UV DTF. Mallemort, Provence.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Technologies</h4>
+        <a href="impression-3d.html">Impression 3D</a>
+        <a href="decoupe-gravure-laser.html">Découpe &amp; gravure laser</a>
+        <a href="uv-dtf.html">UV DTF</a>
+        <a href="personnalisation.html">Personnalisation</a>
+      </div>
+      <div class="foot-col">
+        <h4>Atelier</h4>
+        <a href="boutique.html">Boutique</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="personnalisation.html">Projets sur mesure</a>
+        <a href="xtool-squad.html">xTool Squad</a>
+<a href="coaching.html">Coaching</a>
+      </div>
+      <div class="foot-col">
+        <h4>GC3D</h4>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 GC3D — Mallemort, Provence. Membre xTool Squad.</span>
+      <span class="foot-legal"><a href="mentions-legales.html">Mentions légales</a><a href="cgv.html">CGV</a><a href="confidentialite.html">Confidentialité</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function wireForm(form){
+    var confirmBox = form.parentElement.querySelector('.form-confirm');
+    var errBox = form.querySelector('.form-error');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(errBox) errBox.textContent='';
+      var required = form.querySelectorAll('[required]');
+      for(var i=0;i<required.length;i++){
+        if(!required[i].value){ if(errBox) errBox.textContent='Merci de renseigner tous les champs obligatoires.'; required[i].focus(); return; }
+      }
+      var btn = form.querySelector('button[type="submit"]');
+      var endpoint = form.getAttribute('data-endpoint');
+      var fd = new FormData(form);
+      if(btn){ btn.disabled=true; btn.dataset.label=btn.textContent; btn.textContent='Envoi en cours…'; }
+      fetch(endpoint, { method:'POST', body: fd, headers:{'Accept':'application/json'} })
+        .then(function(r){ return r.ok ? r.json().catch(function(){return {};}) : Promise.reject(r); })
+        .then(function(){
+          form.style.display='none';
+          if(confirmBox) confirmBox.classList.add('is-visible');
+        })
+        .catch(function(){
+          if(errBox) errBox.textContent="L'envoi a échoué. Réessayez ou écrivez directement à guillaumecassisa@gmail.com.";
+          if(btn){ btn.disabled=false; btn.textContent=btn.dataset.label; }
+        });
+    });
+  }
+  document.querySelectorAll('form.js-ajax-form').forEach(wireForm);
+})();
+</script>
+
+
+<script>
+(function(){
+  var b=document.getElementById('burgerBtn'), m=document.getElementById('mobileMenu');
+  if(b&&m){ b.addEventListener('click', function(){ m.classList.toggle('is-open'); }); }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coaching — GC3D</title>
+<meta name="description" content="Réservez en ligne une séance de coaching avec GC3D : prise en main, réglages matière, maintenance et projet accompagné.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 2L30 9.5V24.5L17 32L4 24.5V9.5L17 2Z" stroke="#D58A49" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M4 9.5L17 17M17 17L30 9.5M17 17V32" stroke="#D58A49" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <span><span class="logo-text">GC3D</span><span class="logo-sub">Fabrication numérique</span></span>
+    </a>
+    <nav class="links">
+      <a href="index.html#technologies">Technologies</a>
+<a href="boutique.html">Boutique</a>
+<a href="realisations.html">Réalisations</a>
+<a href="personnalisation.html">Sur mesure</a>
+<a href="xtool-squad.html">xTool Squad</a>
+<a href="coaching.html" class="current">Coaching</a>
+<a href="a-propos.html">À propos</a>
+<a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="boutique.html">Boutique</a>
+      <a class="btn btn-dark" href="contact.html">Concrétiser mon projet</a>
+      <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobileMenu">
+    <a href="index.html#technologies">Technologies</a>
+<a href="boutique.html">Boutique</a>
+<a href="realisations.html">Réalisations</a>
+<a href="personnalisation.html">Sur mesure</a>
+<a href="xtool-squad.html">xTool Squad</a>
+<a href="coaching.html" class="current">Coaching</a>
+<a href="a-propos.html">À propos</a>
+<a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Coaching</div>
+    <h1>Réservez votre séance de coaching.</h1>
+    <p>Choisissez directement un créneau dans l'agenda : prise en main, réglages matière, maintenance ou projet accompagné.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap intro-grid">
+    <div>
+      <div class="eyebrow">Pourquoi un coaching</div>
+      <h2>Gagnez du temps sur votre machine.</h2>
+      <p>Une machine de découpe ou de gravure laser est un outil puissant, mais technique : puissance, vitesse, focus, matériaux... chaque réglage compte.</p>
+      <p>GC3D, membre xTool Squad, accompagne particuliers et professionnels pour aller plus vite vers des résultats nets, avec moins d'essais ratés et plus de pièces réussies.</p>
+    </div>
+    <div class="intro-figure"><img src="images/coaching.jpg" alt="Séance de coaching sur machine laser xTool" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="tag">Visuel provisoire — séance de coaching</span></div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Au programme</div>
+      <h2>Quatre formats de séance.</h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card"><h3>Prise en main</h3><p>Installation, logiciel, premiers réglages pour débuter en confiance sur votre machine xTool.</p></div>
+      <div class="tech-card"><h3>Réglages matière</h3><p>Trouver les bons paramètres de puissance et de vitesse selon vos matériaux.</p></div>
+      <div class="tech-card"><h3>Projet accompagné</h3><p>Avancer sur un projet précis avec un accompagnement pas à pas, de la conception à la pièce finie.</p></div>
+      <div class="tech-card"><h3>Maintenance</h3><p>Entretien courant, nettoyage optique, diagnostic de panne simple pour prolonger la durée de vie de la machine.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reservation">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Réservation en ligne</div>
+      <h2>Choisissez votre créneau.</h2>
+    </div>
+    <div class="cal-consent" id="cal-consent"><p>L'agenda est fourni par Cal.com. Il ne se charge qu'après votre clic, ce qui transmet des données (dont votre adresse IP) à ce service. Voir la <a href="confidentialite.html">politique de confidentialité</a>.</p><button type="button" class="btn btn-copper" id="cal-load">Afficher l'agenda</button></div>
+    <div class="embed-cal" id="cal-embed" hidden></div>
+    <p class="embed-cal-fallback">L'agenda ne s'affiche pas ? Réservez directement sur <a href="https://cal.com/guillaume-cassisa-gcypnu/gc3d" target="_blank" rel="noopener">cal.com/guillaume-cassisa-gcypnu/gc3d</a> ou <a href="contact.html">écrivez à l'atelier</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo-text" style="font-family:var(--font-display);font-weight:700;font-size:1.3rem;">GC3D</div>
+        <p>Produits personnalisés en impression 3D, découpe et gravure laser, impression UV DTF. Mallemort, Provence.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Technologies</h4>
+        <a href="impression-3d.html">Impression 3D</a>
+        <a href="decoupe-gravure-laser.html">Découpe &amp; gravure laser</a>
+        <a href="uv-dtf.html">UV DTF</a>
+        <a href="personnalisation.html">Personnalisation</a>
+      </div>
+      <div class="foot-col">
+        <h4>Atelier</h4>
+        <a href="boutique.html">Boutique</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="personnalisation.html">Projets sur mesure</a>
+        <a href="xtool-squad.html">xTool Squad</a>
+<a href="coaching.html">Coaching</a>
+      </div>
+      <div class="foot-col">
+        <h4>GC3D</h4>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 GC3D — Mallemort, Provence. Membre xTool Squad.</span>
+      <span class="foot-legal"><a href="mentions-legales.html">Mentions légales</a><a href="cgv.html">CGV</a><a href="confidentialite.html">Confidentialité</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("cal-load").addEventListener("click",function(){
+document.getElementById("cal-embed").hidden=false;document.getElementById("cal-consent").hidden=true;
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", {origin:"https://app.cal.com"});
+Cal("inline", {elementOrSelector:"#cal-embed", calLink:"guillaume-cassisa-gcypnu/gc3d", layout:"month_view"});
+Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+});
+</script>
+
+
+<script>
+(function(){
+  var b=document.getElementById('burgerBtn'), m=document.getElementById('mobileMenu');
+  if(b&&m){ b.addEventListener('click', function(){ m.classList.toggle('is-open'); }); }
+})();
+</script>
+
+</body>
+</html>
