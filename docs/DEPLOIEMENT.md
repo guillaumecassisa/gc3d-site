@@ -46,3 +46,11 @@
 ## Rotation des secrets
 
 `BETTER_AUTH_SECRET` (déconnecte tout le monde), clés Stripe, clés de stockage : à renouveler en cas de départ d'un intervenant ou de suspicion de fuite.
+
+## Préproduction actuelle (novembre 2026)
+
+- Hébergement : projet Vercel `gc3d-boutique`, déployé depuis la branche `boutique` du dépôt `gc3d-site`.
+- Base : schéma PostgreSQL isolé `gc3d` dans le projet Supabase `focus-fonciere` (offre gratuite limitée à 2 projets). Rôle dédié `gc3d_app`, propriétaire du seul schéma `gc3d`, sans accès aux tables des autres applications ; schéma non exposé par l'API Supabase.
+- Variables : `DATABASE_SCHEMA=gc3d`, `DATABASE_POOL_MAX=3`, `DATABASE_URL` via le pooler Supabase en mode session (port 5432, `sslmode=require`).
+- Construction : `npm run vercel-build` = migrations Prisma → données initiales (idempotentes) → build Next.js.
+- **Avant l'ouverture des ventes** : migrer vers un projet de base dédié avec sauvegardes (Supabase Pro ou autre), via `pg_dump --schema=gc3d` puis restauration.

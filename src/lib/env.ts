@@ -17,6 +17,10 @@ const schema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   APP_URL: z.url().default("http://localhost:3000"),
   DATABASE_URL: z.string().min(1, "DATABASE_URL est requis"),
+  /// Schéma PostgreSQL de l'application (permet d'isoler GC3D dans une base partagée).
+  DATABASE_SCHEMA: z.string().regex(/^[a-z_][a-z0-9_]*$/).default("public"),
+  /// Connexions max par instance (bases mutualisées / offres gratuites : rester bas).
+  DATABASE_POOL_MAX: z.coerce.number().int().min(1).max(50).default(5),
   BETTER_AUTH_SECRET: z.string().min(32, "BETTER_AUTH_SECRET doit faire au moins 32 caractères"),
 
   STRIPE_SECRET_KEY: optional,

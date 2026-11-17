@@ -18,7 +18,9 @@ import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
 import { DEFAULT_SETTINGS } from "../src/features/settings/schema";
 import { LEGAL_DRAFT_NOTICE, LEGAL_PAGES, MATERIALS, TECHNOLOGIES, slugify } from "./seed-data";
 
-const db = new PrismaClient({ adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL! }) });
+const db = new PrismaClient({
+  adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL! }, { schema: process.env.DATABASE_SCHEMA ?? "public" }),
+});
 
 async function seedTechnologiesAndCategories() {
   for (const [ti, t] of TECHNOLOGIES.entries()) {

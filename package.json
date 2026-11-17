@@ -20,7 +20,8 @@
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
     "postinstall": "prisma generate",
-    "test:e2e": "node tests/e2e/smoke.mjs"
+    "test:e2e": "node tests/e2e/smoke.mjs",
+    "vercel-build": "prisma migrate deploy && tsx prisma/seed.ts && next build"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1171.0",

@@ -1,6 +1,3 @@
--- CreateSchema
-CREATE SCHEMA IF NOT EXISTS "public";
-
 -- CreateEnum
 CREATE TYPE "UserRole" AS ENUM ('OWNER', 'SHOP_MANAGER', 'PRODUCTION_OPERATOR', 'SUPPORT', 'CUSTOMER');
 

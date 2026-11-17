@@ -1,5 +1,5 @@
 import "server-only";
-import type { Tx } from "@/lib/db/client";
+import { table, type Tx } from "@/lib/db/client";
 
 /**
  * Numérotation continue des documents (commandes, devis, factures).
@@ -12,11 +12,11 @@ export type SequenceKind = "order" | "quote" | "quoteRequest" | "invoice" | "cre
 export async function nextSequenceValue(tx: Tx, kind: SequenceKind, year: number): Promise<number> {
   const key = `${kind}:${year}`;
   const rows = await tx.$queryRaw<{ value: number }[]>`
-    INSERT INTO "DocumentSequence" ("key", "nextValue", "updatedAt")
+    INSERT INTO ${table("DocumentSequence")} AS ds ("key", "nextValue", "updatedAt")
     VALUES (${key}, 2, NOW())
     ON CONFLICT ("key") DO UPDATE
-      SET "nextValue" = "DocumentSequence"."nextValue" + 1, "updatedAt" = NOW()
-    RETURNING "nextValue" - 1 AS value`;
+      SET "nextValue" = ds."nextValue" + 1, "updatedAt" = NOW()
+    RETURNING ds."nextValue" - 1 AS value`;
   const value = rows[0]?.value;
   if (typeof value !== "number") throw new Error(`Séquence ${key} indisponible`);
   return value;
