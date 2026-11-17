@@ -2,28 +2,16 @@ import "server-only";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Prisma, PrismaClient } from "@/generated/prisma/client";
 import { env } from "@/lib/env";
+import { pgConnectionConfig } from "./connection";
 
 /**
  * Client Prisma unique (réutilisé entre rechargements à chaud en développement).
  */
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
-/**
- * `sslmode=require` (sémantique libpq : chiffré, sans vérification de la chaîne)
- * est traduit explicitement pour le pilote `pg`, qui l'interpréterait sinon comme
- * `verify-full`. Les commandes Prisma CLI lisent l'URL telle quelle.
- */
-function connectionConfig() {
-  const url = new URL(env.DATABASE_URL);
-  const mode = url.searchParams.get("sslmode");
-  url.searchParams.delete("sslmode");
-  const ssl = mode === "require" || mode === "prefer" ? { rejectUnauthorized: false } : mode === "verify-full" ? true : undefined;
-  return { connectionString: url.toString(), ssl };
-}
-
 function createClient() {
   const adapter = new PrismaPg(
-    { ...connectionConfig(), max: env.DATABASE_POOL_MAX },
+    { ...pgConnectionConfig(env.DATABASE_URL), max: env.DATABASE_POOL_MAX },
     { schema: env.DATABASE_SCHEMA },
   );
   return new PrismaClient({

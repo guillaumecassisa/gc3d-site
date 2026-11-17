@@ -15,11 +15,12 @@ import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { hashPassword } from "better-auth/crypto";
 import { PrismaClient, type Prisma } from "../src/generated/prisma/client";
+import { pgConnectionConfig } from "../src/lib/db/connection";
 import { DEFAULT_SETTINGS } from "../src/features/settings/schema";
 import { LEGAL_DRAFT_NOTICE, LEGAL_PAGES, MATERIALS, TECHNOLOGIES, slugify } from "./seed-data";
 
 const db = new PrismaClient({
-  adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL! }, { schema: process.env.DATABASE_SCHEMA ?? "public" }),
+  adapter: new PrismaPg(pgConnectionConfig(process.env.DATABASE_URL!), { schema: process.env.DATABASE_SCHEMA ?? "public" }),
 });
 
 async function seedTechnologiesAndCategories() {
